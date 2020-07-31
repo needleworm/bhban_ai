@@ -1,0 +1,5 @@
+Introducing Rock Paper Scissors – A multi class learning dataset
+
+http://www.laurencemoroney.com/rock-paper-scissors-dataset/
+
+Laurence Moroney (lmoroney@gmail.com / laurencemoroney.com)

@@ -1,0 +1,47 @@
+"""
+Author : Byunghyun Ban
+Date : 2020.07.17.
+"""
+import numpy as np
+from tensorflow import keras
+from matplotlib import pyplot as plt
+
+
+# 데이터를 떠먹여 줄 클래스를 제작합니다.
+class DataReader():
+    def __init__(self):
+        self.label_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+        self.cifar = keras.datasets.cifar10
+        (self.origin_train_X, self.train_Y), (self.origin_test_X, self.test_Y) = self.cifar.load_data()
+
+        self.train_X = self.preprocess(self.origin_train_X)
+        self.test_X = self.preprocess(self.origin_test_X)
+
+    def preprocess(self, images):
+        images = images / 255.0
+        r = images[:, :, :, 0]
+        g = images[:, :, :, 1]
+        b = images[:, :, :, 2]
+        return (r + g + b) / 3.0
+
+    def show_raw_images(self):
+        plt.figure(figsize=(10, 10))
+        for i in range(25):
+            plt.subplot(5, 5, i+1)
+            plt.xticks([])
+            plt.yticks([])
+            plt.grid(False)
+            plt.imshow(self.origin_train_X[i], cmap=plt.cm.binary)
+            plt.xlabel(self.label_names[int(self.train_Y[i])])
+        plt.show()
+
+    def show_processed_images(self):
+        plt.figure(figsize=(10, 10))
+        for i in range(25):
+            plt.subplot(5, 5, i + 1)
+            plt.xticks([])
+            plt.yticks([])
+            plt.grid(False)
+            plt.imshow(self.train_X[i], cmap=plt.cm.binary)
+            plt.xlabel(self.label_names[int(self.train_Y[i])])
+        plt.show()

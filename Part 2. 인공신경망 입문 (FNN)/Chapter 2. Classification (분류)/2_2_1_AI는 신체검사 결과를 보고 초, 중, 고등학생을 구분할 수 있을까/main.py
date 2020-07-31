@@ -5,12 +5,8 @@ Date : 2020.07.24.
 import os
 import tensorflow as tf
 from tensorflow import keras
-import data_reader as dr
+import data_reader
 import time
-
-# 텐서플로의 경고메시지 출력 기능을 끕니다.
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-tf.logging.set_verbosity(tf.logging.ERROR)
 
 # 시작 시간을 기록합니다.
 start = time.time()
@@ -20,7 +16,7 @@ print("Process Start...\n\n")
 EPOCHS = 30 # 예제 기본값은 30입니다.
 
 # 데이터를 읽어옵니다.
-DataReader = dr.DataReader("data")
+dr = data_reader.DataReader("data")
 
 # 인공신경망을 제작합니다.
 # 총 3층짜리 신경망입니다.
@@ -41,10 +37,10 @@ print("Artificial Neural Network Compile Done")
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
-graph.fit(DataReader.train_X, DataReader.train_Y, epochs=EPOCHS)
+graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS)
 
 # 학습 정확도를 평가합니다.
-test_loss, test_accuracy = graph.evaluate(DataReader.test_X, DataReader.test_Y)
+test_loss, test_accuracy = graph.evaluate(dr.test_X, dr.test_Y)
 
 # 테스트 결과를 출력합니다.
 print("\n\n************ TEST RESULT ************ ")
