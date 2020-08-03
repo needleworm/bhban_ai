@@ -13,7 +13,7 @@ start = time.time()
 print("Process Start...\n\n")
 
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
-EPOCHS = 30 # 예제 기본값은 30입니다.
+EPOCHS = 20  # 예제 기본값은 50입니다.
 
 # 데이터를 읽어옵니다.
 dr = data_reader.DataReader("data")
@@ -21,15 +21,15 @@ dr = data_reader.DataReader("data")
 # 인공신경망을 제작합니다.
 # 총 3층짜리 신경망입니다.
 graph = keras.Sequential([
-    keras.layers.Dense(3, activation="tanh"), # 1층
-    keras.layers.Dense(21, activation='tanh'), # 2층
-    keras.layers.Dense(3, activation='softmax') # 3층
+    keras.layers.Dense(3),
+    keras.layers.Dense(128, activation="relu"),
+    keras.layers.Dense(3, activation='softmax')
 ])
 
 # 인공신경망을 컴파일합니다.
 graph.compile(
-    optimizer="adam", # 아담 옵티마이저
-    loss="categorical_crossentropy", # 크로스엔트로피
+    optimizer="adam",  # 아담 옵티마이저
+    loss="sparse_categorical_crossentropy", # 크로스엔트로피
     metrics=["accuracy"]
 )
 

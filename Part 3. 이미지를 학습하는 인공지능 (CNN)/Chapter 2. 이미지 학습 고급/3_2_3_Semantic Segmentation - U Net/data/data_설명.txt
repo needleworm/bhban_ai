@@ -1,0 +1,9 @@
+데이터 원본
+
+The Oxford-IIIT Pet Dataset
+
+http://www.robots.ox.ac.uk/~vgg/data/pets/
+
+* 전처리
+배경은 0, 동물과 boundary는 255로 값 수정
+이미지 사이즈 150*150으로 수정

@@ -1,0 +1,59 @@
+"""
+Author : Byunghyun Ban
+Date : 2020.07.17.
+"""
+import numpy as np
+import random
+
+
+# 데이터를 떠먹여 줄 클래스를 제작합니다.
+class DataReader():
+    def __init__(self):
+        self.label = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
+
+        self.train_X = []
+        self.train_Y = []
+        self.test_X = []
+        self.test_Y = []
+
+        self.read_data()
+
+    def read_data(self):
+        print("Reading Data...")
+        file = open("data/iris.csv")
+        data = []
+        for line in file:
+            splt = line.split(",")
+            if len(splt) != 5:
+              break
+            feature_1 = float(splt[0].strip())
+            feature_2 = float(splt[1].strip())
+            feature_3 = float(splt[2].strip())
+            feature_4 = float(splt[3].strip())
+            label = self.label.index(splt[4].strip())
+            data.append(((feature_1, feature_2, feature_3, feature_4), label))
+
+        random.shuffle(data)
+
+        for i, el in enumerate(data):
+            if i < 0.8*len(data):
+                self.train_X.append(el[0])
+                self.train_Y.append(el[1])
+            else:
+                self.test_X.append(el[0])
+                self.test_Y.append(el[1])
+
+        max_values = np.array((7.9, 4.4, 6.9, 2.5))
+
+        self.train_X = np.asarray(self.train_X) / max_values
+        self.train_Y = np.asarray(self.train_Y)
+        self.test_X = np.asarray(self.test_X) / max_values
+        self.test_Y = np.asarray(self.test_Y)
+
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')

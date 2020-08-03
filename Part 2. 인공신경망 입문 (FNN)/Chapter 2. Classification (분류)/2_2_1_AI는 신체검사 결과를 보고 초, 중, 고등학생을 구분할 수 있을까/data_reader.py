@@ -52,8 +52,7 @@ class DataReader():
         file.readline()
 
         # 데이터와 레이블을 저장하기 위한 변수입니다.
-        X = []
-        Y = []
+        data = []
 
         # 파일을 한 줄씩 읽어옵니다.
         for line in file:
@@ -61,34 +60,22 @@ class DataReader():
             splt = line.split(",")
 
             # split 결과물을 정리해 X값과 Y값으로 추립니다.
-            data, cls = self.process_data(splt)
+            x, cls = self.process_data(splt)
 
             # 추려낸 데이터를 저장합니다.
-            X.append(data)
-            Y.append(cls)
+            data.append((x, cls))
 
-        # 데이터를 np.array 형태로 변환합니다.
-        X = np.asarray(X)
-        Y = np.asarray(Y)
-
-        # 데이터를 노멀라이즈 합니다. 각 컬럼별 최대값으로 나눠줍니다.
-        # 이 과정에서 데이터의 값이 최소 0부터 최대 1까지로 변환됩니다.
-        X[:, 0] /= np.max(X[:, 0])
-        X[:, 1] /= np.max(X[:, 1])
-        X[:, 2] /= np.max(X[:, 2])
+        # 데이터를 섞습니다
+        random.shuffle(data)
 
         # 트레이닝 데이터와 테스트 데이터를 분리할 것입니다.
-        for i in range(len(X)):
-            # 매번 임의로 70% 데이터를 트레이닝 데이터로 편입시키고
-            # 나머지 30% 데이터를 테스트 데이터로 편입시킵니다.
-            # random.random() 기반이므로 실행할 때마다 트레이닝 데이터와 테스트 데이터가
-            # 다르게 분배됩니다.
-            if random.random() < 0.7:
-                self.train_X.append(X[i])
-                self.train_Y.append(Y[i])
+        for i in range(len(data)):
+            if i < len(data) * 0.8:
+                self.train_X.append(data[i][0])
+                self.train_Y.append(data[i][1])
             else:
-                self.test_X.append(X[i])
-                self.test_Y.append(Y[i])
+                self.test_X.append(data[i][0])
+                self.test_Y.append(data[i][1])
 
         # 최종적으로 변수를 np.array 형태로 정리합니다.
         self.train_X = np.asarray(self.train_X)
@@ -109,8 +96,8 @@ class DataReader():
         # 읽어온 splt 값에서 학교, 성별, 키, 몸무게만 추출합니다.
         school = splt[9]
         gender = splt[13]
-        height = float(splt[15])
-        weight = float(splt[16])
+        height = float(splt[15]) / 194.2
+        weight = float(splt[16]) / 130.7
 
         # 완성된 데이터를 저장할 변수입니다.
         data = []
@@ -128,11 +115,11 @@ class DataReader():
         # 초등학교, 중학교, 고등학교 정보를 원 핫 벡터로 정리합니다.
         # cls는 레이블 역할을 수행합니다.
         if school.endswith("초등학교"):
-            cls = [1, 0, 0]
+            cls = 0
         elif school.endswith("중학교"):
-            cls = [0, 1, 0]
+            cls = 1
         elif school.endswith("고등학교"):
-            cls = [0, 0, 1]
+            cls = 2
 
         # 결과물을 리턴합니다.
         return data, cls
