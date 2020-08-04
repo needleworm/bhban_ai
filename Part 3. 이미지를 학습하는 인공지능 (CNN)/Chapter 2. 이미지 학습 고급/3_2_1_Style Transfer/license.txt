@@ -1,0 +1,2 @@
+The code uses Google MobileNet model with Tensorflow Hub,
+which are in Apache 2.0 Licence.
