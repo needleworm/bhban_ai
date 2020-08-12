@@ -38,10 +38,11 @@ print("Artificial Neural Network Compile Done")
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
-graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS, batch_size=5)
+early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
+history = graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS, batch_size=5, validation_data=(dr.test_X, dr.test_Y), callbacks=[early_stop])
 
-# 학습 정확도를 평가합니다.
-test_loss, test_accuracy = graph.evaluate(dr.test_X, dr.test_Y)
+# 학습 결과를 그래프로 출력합니다.
+data_reader.draw_graph(history)
 
 # 테스트 결과를 출력합니다.
 print("\n\n************ TEST RESULT ************ ")

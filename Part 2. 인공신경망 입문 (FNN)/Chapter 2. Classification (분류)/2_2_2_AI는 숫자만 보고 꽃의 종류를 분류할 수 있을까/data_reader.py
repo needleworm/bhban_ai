@@ -57,3 +57,12 @@ class DataReader():
         print("Training Y Size : " + str(self.train_Y.shape))
         print("Test X Size : " + str(self.test_X.shape))
         print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
+
+
+def draw_graph(history):
+    train_history = history.history["loss"]
+    validation_history = history.history["val_loss"]
+    fig2 = plt.figure(figsize=(8, 8))
+    plt.plot(train_history, "red")
+    plt.plot(validation_history, 'blue')
+    fig2.savefig("train_history.png")

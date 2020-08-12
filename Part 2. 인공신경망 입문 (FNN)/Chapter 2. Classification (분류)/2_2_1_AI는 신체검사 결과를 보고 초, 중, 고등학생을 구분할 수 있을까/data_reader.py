@@ -123,3 +123,12 @@ class DataReader():
 
         # 결과물을 리턴합니다.
         return data, cls
+
+
+def draw_graph(history):
+    train_history = history.history["loss"]
+    validation_history = history.history["val_loss"]
+    fig2 = plt.figure(figsize=(8, 8))
+    plt.plot(train_history, "red")
+    plt.plot(validation_history, 'blue')
+    fig2.savefig("train_history.png")

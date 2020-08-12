@@ -1,0 +1,9 @@
+Apple Inc. (APPL) 
+Nasdaq GS - Currency in USD
+
+2010년 1월 1일부터
+2020년 8월 11일까지
+
+애플 주식 가격 데이터(USD) 입니다.
+
+https://finance.yahoo.com/quote/AAPL/history?period1=1262304000&period2=1597104000&interval=1d&filter=history&frequency=1d

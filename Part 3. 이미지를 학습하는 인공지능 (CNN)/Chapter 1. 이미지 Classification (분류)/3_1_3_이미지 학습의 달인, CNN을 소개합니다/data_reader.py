@@ -30,3 +30,12 @@ class DataReader():
             plt.imshow(self.train_X[i], cmap=plt.cm.binary)
             plt.xlabel(self.label_names[int(self.train_Y[i])])
         plt.show()
+
+
+def draw_graph(history):
+    train_history = history.history["loss"]
+    validation_history = history.history["val_loss"]
+    fig2 = plt.figure(figsize=(8, 8))
+    plt.plot(train_history, "red")
+    plt.plot(validation_history, 'blue')
+    fig2.savefig("train_history.png")

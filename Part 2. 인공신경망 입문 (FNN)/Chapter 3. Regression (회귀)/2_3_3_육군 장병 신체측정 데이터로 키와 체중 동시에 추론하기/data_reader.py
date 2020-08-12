@@ -59,36 +59,21 @@ def process(txt):
     return float(txt)
 
 
-def save_statistics(graph, test_X, test_Y):
-    prediction = graph.predict(test_X)
-    fig = plt.figure()
-    plt.scatter(prediction[:, 0], test_Y[:, 0])
-    plt.xlabel('Test_Y')
-    plt.ylabel('Model Prediction')
-    plt.axis('equal')
-    plt.axis('square')
-    plt.xlim(0, 1)
-    plt.ylim(0, 1)
-    plt.plot([-100, 100], [-100, 100])
-    plt.savefig("height Result.png")
-    plt.close(fig)
+def draw_graph(prediction, label, history):
+    X = prediction / np.max(prediction, axis=0)
+    Y = label / np.max(label, axis=0)
 
-    fig = plt.figure()
-    plt.scatter(prediction[:, 1], test_Y[:, 1])
-    plt.xlabel('Test_Y')
-    plt.ylabel('Model Prediction')
-    plt.axis('equal')
-    plt.axis('square')
-    plt.xlim(0, 1)
-    plt.ylim(0, 1)
-    plt.plot([-100, 100], [-100, 100])
-    plt.savefig("weight Result.png")
-    plt.close(fig)
+    minval = min(np.min(X), np.min(Y))
+    maxval = max(np.max(X), np.max(Y))
 
-    fig = plt.figure()
-    error = np.average((prediction - test_Y), axis=1)
-    plt.hist(error, bins=25)
-    plt.xlabel("Prediction - Label")
-    plt.ylabel("Count")
-    plt.savefig("histogram.png")
-    plt.close(fig)
+    fig = plt.figure(figsize=(8, 8))
+    plt.scatter(X, Y)
+    plt.plot([minval, maxval], [minval, maxval], "red")
+    fig.savefig("result.png")
+
+    train_history = history.history["loss"]
+    validation_history = history.history["val_loss"]
+    fig2 = plt.figure(figsize=(8, 8))
+    plt.plot(train_history, "red")
+    plt.plot(validation_history, 'blue')
+    fig2.savefig("train_history.png")
