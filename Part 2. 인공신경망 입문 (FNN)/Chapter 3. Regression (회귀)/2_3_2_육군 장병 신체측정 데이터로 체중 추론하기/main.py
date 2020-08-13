@@ -32,11 +32,7 @@ graph = keras.Sequential([
 ])
 
 # 인공신경망을 컴파일합니다.
-graph.compile(
-    optimizer="adam",  # 아담 옵티마이저
-    loss="mse",  # MAPE
-    metrics=['mae']
-)
+graph.compile(optimizer="adam", loss="mse", metrics=['mae'])
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")

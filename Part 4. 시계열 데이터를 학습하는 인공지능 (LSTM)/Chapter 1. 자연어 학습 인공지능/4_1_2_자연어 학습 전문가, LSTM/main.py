@@ -20,7 +20,7 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 graph = keras.Sequential([
-    keras.layers.Embedding(6000, 128, input_shape=(None,)),
+    keras.layers.Embedding(8983, 128),
     keras.layers.Bidirectional(keras.layers.LSTM(32)),
     keras.layers.Dense(32, activation='relu'),
     keras.layers.Dropout(0.1),

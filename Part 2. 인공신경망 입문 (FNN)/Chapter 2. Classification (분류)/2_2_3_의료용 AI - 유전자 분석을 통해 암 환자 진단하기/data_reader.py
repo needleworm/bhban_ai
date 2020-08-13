@@ -58,7 +58,20 @@ class DataReader():
 def draw_graph(history):
     train_history = history.history["loss"]
     validation_history = history.history["val_loss"]
-    fig2 = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(8, 8))
+    plt.title("Loss History")
+    plt.xlabel("EPOCH")
+    plt.ylabel("LOSS Function")
     plt.plot(train_history, "red")
     plt.plot(validation_history, 'blue')
-    fig2.savefig("train_history.png")
+    fig.savefig("train_history.png")
+
+    train_history = history.history["accuracy"]
+    validation_history = history.history["val_accuracy"]
+    fig = plt.figure(figsize=(8, 8))
+    plt.title("Accuracy History")
+    plt.xlabel("EPOCH")
+    plt.ylabel("Accuracy")
+    plt.plot(train_history, "red")
+    plt.plot(validation_history, 'blue')
+    fig.savefig("accuracy_history.png")

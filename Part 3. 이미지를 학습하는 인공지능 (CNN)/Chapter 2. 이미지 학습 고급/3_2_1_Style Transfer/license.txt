@@ -1,2 +1,2 @@
-The code uses Google MobileNet model with Tensorflow Hub,
-which are in Apache 2.0 Licence.
+The code uses Google MobileNet model with Tensorflow Hub, with Apache 2.0 Licence.
+Gatys, Leon A., Alexander S. Ecker, and Matthias Bethge. "A neural algorithm of artistic style." arXiv preprint arXiv:1508.06576 (2015).

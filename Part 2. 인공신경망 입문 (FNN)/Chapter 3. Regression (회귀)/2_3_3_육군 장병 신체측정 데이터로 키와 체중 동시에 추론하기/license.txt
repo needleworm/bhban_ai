@@ -16,7 +16,3 @@
 URL		http://opendata.mnd.go.kr/openinf/sheetview2.jsp?infId=OA-9425
 설명		육군 신병 신체치수 측정정보 (키, 몸무게, 허리둘레, 머리둘레 등)
 비용부과유무	무료
-
-
-----------------------------------
-Some contents of the sample codes are modified version of example codes from Tensorflow.org in Apache 2.0 Licence.

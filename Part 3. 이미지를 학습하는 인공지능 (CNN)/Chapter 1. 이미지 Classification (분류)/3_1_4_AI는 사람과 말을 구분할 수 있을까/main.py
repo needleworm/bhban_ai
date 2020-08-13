@@ -36,10 +36,7 @@ graph = keras.Sequential([
 ])
 
 # 인공신경망을 컴파일합니다.
-graph.compile(optimizer='adam',
-        loss='binary_crossentropy',
-        metrics=['accuracy']
-)
+graph.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 print("Artificial Neural Network Compile Done")
 

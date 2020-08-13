@@ -1,8 +1,6 @@
 """
 Author : Byunghyun Ban
 Date : 2020.07.17.
-This code uses data visualization sample codes from Tensorflow.org
-which has Apache 2.0 License.
 """
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -67,13 +65,19 @@ def draw_graph(prediction, label, history):
     maxval = max(np.max(X), np.max(Y))
 
     fig = plt.figure(figsize=(8, 8))
+    plt.title("Regression Result")
+    plt.xlabel("Ground Truth")
+    plt.ylabel("AI Predict")
     plt.scatter(X, Y)
     plt.plot([minval, maxval], [minval, maxval], "red")
     fig.savefig("result.png")
 
     train_history = history.history["loss"]
     validation_history = history.history["val_loss"]
-    fig2 = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(8, 8))
+    plt.title("Loss History")
+    plt.xlabel("EPOCH")
+    plt.ylabel("LOSS Function")
     plt.plot(train_history, "red")
     plt.plot(validation_history, 'blue')
-    fig2.savefig("train_history.png")
+    fig.savefig("train_history.png")
