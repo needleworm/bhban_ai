@@ -5,6 +5,7 @@ Date : 2020.07.17.
 import numpy as np
 from tensorflow import keras
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import random
 from matplotlib import pyplot as plt
 
@@ -18,6 +19,14 @@ class DataReader():
 
         self.train_X = np.asarray(train_X) / 255.0
         self.test_X = np.asarray(test_X) / 255.0
+
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
 
     def show_images(self):
         plt.figure(figsize=(10, 10))

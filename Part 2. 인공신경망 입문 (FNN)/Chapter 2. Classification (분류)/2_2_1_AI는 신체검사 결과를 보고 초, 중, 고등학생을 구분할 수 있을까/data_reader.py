@@ -5,6 +5,7 @@ Date : 2020.07.17.
 import numpy as np
 import os
 import random
+from matplotlib import pyplot as plt
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.

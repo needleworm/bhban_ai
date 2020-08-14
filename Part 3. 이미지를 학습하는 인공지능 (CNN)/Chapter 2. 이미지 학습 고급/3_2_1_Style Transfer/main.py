@@ -2,6 +2,8 @@
 Author : Byunghyun Ban
 Date : 2020.07.24.
 """
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 import time
 import tensorflow_hub as hub

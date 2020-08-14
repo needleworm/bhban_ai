@@ -13,7 +13,7 @@ start = time.time()
 print("Process Start...\n\n")
 
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
-EPOCHS = 50  # 예제 기본값은 100입니다.
+EPOCHS = 50  # 예제 기본값은 50입니다.
 
 # 데이터를 읽어옵니다.
 dr = data_reader.DataReader()

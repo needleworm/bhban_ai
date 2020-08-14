@@ -14,7 +14,7 @@ from PIL import Image
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader():
     def __init__(self, content, style):
-        self.content = load_img(content)
+        self.content = self.load_img(content)
         self.style = self.load_img(style)
 
     def load_img(self, path_to_img):

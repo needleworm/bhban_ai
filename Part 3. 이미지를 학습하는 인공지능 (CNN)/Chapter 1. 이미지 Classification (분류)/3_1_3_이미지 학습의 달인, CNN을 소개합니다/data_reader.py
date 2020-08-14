@@ -2,6 +2,8 @@
 Author : Byunghyun Ban
 Date : 2020.07.17.
 """
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy as np
 from tensorflow import keras
 from matplotlib import pyplot as plt
@@ -16,6 +18,14 @@ class DataReader():
 
         self.train_X = self.preprocess(self.train_X)
         self.test_X = self.preprocess(self.test_X)
+
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
 
     def preprocess(self, images):
         return images / 255.0

@@ -23,11 +23,11 @@ class DataReader():
     def read_images(self):
         data = []
         print("Reading Data...")
-        classes = os.listdir("data2")
+        classes = os.listdir("data")
         for i, cls in enumerate(classes):
             print("Opening " + cls + "/")
-            for el in os.listdir("data2/" + cls):
-                img = Image.open("data2/" + cls + "/" + el)
+            for el in os.listdir("data/" + cls):
+                img = Image.open("data/" + cls + "/" + el)
                 data.append((np.asarray(img), i))
                 img.close()
 

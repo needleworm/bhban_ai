@@ -5,6 +5,7 @@ This code uses sample codes from Tensorflow.org,
 which has Apache 2.0 License.
 """
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from tensorflow import keras
 import data_reader
@@ -29,8 +30,6 @@ graph = unet.graph(2)
 # 인공신경망을 컴파일합니다.
 graph.compile(optimizer="adam", loss="binary_crossentropy", metrics=['accuracy'])
 
-print("Artificial Neural Network Compile Done")
-
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
@@ -44,11 +43,6 @@ data_reader.save_segmentation_results(dr.test_X, dr.test_Y, graph)
 
 # 학습 결과를 그래프로 출력합니다.
 data_reader.draw_graph(history)
-
-# 테스트 결과를 출력합니다.
-print("\n\n************ TEST RESULT ************ ")
-print("Loss : ", test_loss)
-print("Accuracy : ", str(test_accuracy * 100)[:5] + "%")
 
 # 코드 종료 시간을 계산하여 총 몇초가 소요되었는지 출력합니다.
 duration = time.time() - start

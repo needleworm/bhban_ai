@@ -15,6 +15,14 @@ class DataReader():
         self.normalize_factors = []
         self.train_X, self.train_Y, self.test_X, self.test_Y = self.read_data()
 
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
+
     def read_data(self):
         file = open("data/" + os.listdir('data')[0])
         data = []

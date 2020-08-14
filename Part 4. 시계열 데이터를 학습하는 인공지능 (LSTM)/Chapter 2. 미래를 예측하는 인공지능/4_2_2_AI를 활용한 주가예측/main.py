@@ -20,13 +20,13 @@ dr = data_reader.DataReader(14)
 
 # 인공신경망을 제작합니다.
 graph = keras.Sequential([
-    keras.layers.Bidirectional(keras.layers.LSTM(64, return_sequences=True)),
-    keras.layers.Dense(32),
-    keras.layers.Dense(5, activation="sigmoid"),
+    keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True)),
+    keras.layers.Dense(64, activation="relu"),
+    keras.layers.Dense(5),
 ])
 
 # 인공신경망을 컴파일합니다.
-graph.compile(optimizer="adam", loss="mse", metrics=["mae"])
+graph.compile(optimizer="adam", loss="mae", metrics=["mse"])
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
