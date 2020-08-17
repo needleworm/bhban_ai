@@ -1,0 +1,5 @@
+The dataset was provided by Simpson et al. with CC BY-SA 4.0 License.
+http://medicaldecathlon.com/
+Simpson, Amber L., et al. "A large annotated medical image dataset for the development and evaluation of segmentation algorithms." arXiv preprint arXiv:1902.09063 (2019).
+
+Some contents of the sample codes are modified version of example codes from https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277 in Apache 2.0 Licence.
