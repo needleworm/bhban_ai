@@ -10,8 +10,8 @@ import numpy as np
 
 
 # 인공신경망을 제작합니다.
-def graph(output_channel):
-    input = keras.layers.Input((128, 128, 3))
+def graph(input_X, input_Y):
+    input = keras.layers.Input((input_X, input_Y, 3))
 
     # 첫 번째 Convolution Block
     Conv1 = keras.layers.Conv2D(16, (3, 3), activation="relu", padding='same')(input)

@@ -25,7 +25,7 @@ dr = data_reader.DataReader()
 # U-Net을 불러옵니다.
 # U-Net의 규모나 구조가 이전 예제에 비해 복잡하여 별도 파일로 제작했습니다.
 # U-Net의 제작 방법이 궁금하시다면 "unet.py" 파일을 확인해보시기 바랍니다.
-graph = unet.graph(2)
+graph = unet.graph(128, 128)
 
 # 인공신경망을 컴파일합니다.
 graph.compile(optimizer="adam", loss="binary_crossentropy", metrics=['accuracy'])
@@ -34,9 +34,6 @@ graph.compile(optimizer="adam", loss="binary_crossentropy", metrics=['accuracy']
 print("\n\n************ TRAINING START ************ ")
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
 history = graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS, validation_data=(dr.test_X, dr.test_Y), callbacks=[early_stop])
-
-# 학습 정확도를 평가합니다.
-test_loss, test_accuracy = graph.evaluate(dr.test_X, dr.test_Y)
 
 # Segmentation 결과를 저장합니다.
 data_reader.save_segmentation_results(dr.test_X, dr.test_Y, graph)
