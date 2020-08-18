@@ -17,7 +17,7 @@ print("Process Start...\n\n")
 EPOCHS = 20  # 예제 기본값은 20입니다.
 
 # 데이터를 읽어옵니다.
-dr = data_reader.DataReader("data")
+dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 # 총 3층짜리 신경망입니다.

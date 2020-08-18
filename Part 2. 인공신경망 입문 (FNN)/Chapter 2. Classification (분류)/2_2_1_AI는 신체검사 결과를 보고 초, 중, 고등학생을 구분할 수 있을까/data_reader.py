@@ -10,15 +10,12 @@ from matplotlib import pyplot as plt
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader():
-    def __init__(self, datadir):
+    def __init__(self):
         # 읽어올 파일 이름을 저장할 변수입니다.
         filename = []
 
-        # 학습할 데이터가 저장된 폴더 이름을 입력받습니다.
-        self.datadir = datadir
-
         # 해당 폴더 안에 있는 파일들을 목록화 합니다.
-        files = os.listdir(self.datadir)
+        files = os.listdir("data")
 
         # 이번 예제에서는 ".csv"파일을 사용할 계획이므로, ".csv"파일만 골라냅니다.
         for el in files:
