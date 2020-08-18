@@ -11,40 +11,22 @@ from matplotlib import pyplot as plt
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader():
     def __init__(self):
-        # 읽어올 파일 이름을 저장할 변수입니다.
-        filename = []
-
-        # 해당 폴더 안에 있는 파일들을 목록화 합니다.
-        files = os.listdir("data")
-
-        # 이번 예제에서는 ".csv"파일을 사용할 계획이므로, ".csv"파일만 골라냅니다.
-        for el in files:
-            if ".csv" not in el:
-                continue
-            filename.append(el)
-
-        # 이번 예제에서는 단 하나의 csv 파일만 사용할 계획이므로
-        # 폴더 안의 CSV파일 개수가 1개가 아닐 경우 경고를 출력하며 시스템을 종료합니다.
-        if len(filename) != 1:
-            print("Please Provide Only 1 CSV file in data/ directory.")
-            exit(1)
-
-        # 최종 확인된 파일 이름을 지정합니다.
-        self.filename = filename[0]
-
         # 데이터를 저장할 변수들입니다.
-        self.train_X = []
-        self.train_Y = []
-        self.test_X = []
-        self.test_Y = []
+        self.train_X, self.train_Y, self.test_X, self.test_Y = self.read_data()
 
-        # 본격적으로 파일을 읽어옵니다.
-        self.read_data()
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
 
     # 데이터를 읽어오기 위한 매서드입니다.
     def read_data(self):
         # 파일을 실행합니다.
-        file = open(self.datadir + "/" + self.filename)
+        filename = os.listdir("data")[0]
+        file = open("data/" + filename)
 
         # 헤더를 제거합니다.
         file.readline()
@@ -66,28 +48,22 @@ class DataReader():
         # 데이터를 섞습니다
         random.shuffle(data)
 
-        # 트레이닝 데이터와 테스트 데이터를 분리할 것입니다.
-        for i in range(len(data)):
-            if i < len(data) * 0.8:
-                self.train_X.append(data[i][0])
-                self.train_Y.append(data[i][1])
-            else:
-                self.test_X.append(data[i][0])
-                self.test_Y.append(data[i][1])
+        X = []
+        Y = []
 
-        # 최종적으로 변수를 np.array 형태로 정리합니다.
-        self.train_X = np.asarray(self.train_X)
-        self.train_Y = np.asarray(self.train_Y)
-        self.test_X = np.asarray(self.test_X)
-        self.test_Y = np.asarray(self.test_Y)
+        for el in data:
+            X.append(el[0])
+            Y.append(el[1])
 
-        # 데이터 읽기가 완료되었습니다.
-        # 읽어온 데이터의 정보를 출력합니다.
-        print("\n\nData Read Done!")
-        print("Training X Size : " + str(self.train_X.shape))
-        print("Training Y Size : " + str(self.train_Y.shape))
-        print("Test X Size : " + str(self.test_X.shape))
-        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
+        X = np.asarray(X)
+        Y = np.asarray(Y)
+
+        train_X = X[:int(len(X) * 0.8)]
+        train_Y = Y[:int(len(Y) * 0.8)]
+        test_X = X[int(len(X) * 0.8):]
+        test_Y = Y[int(len(Y) * 0.8):]
+
+        return train_X, train_Y, test_X, test_Y
 
     # split() 값을 정리하기 위한 매서드입니다.
     def process_data(self, splt):
