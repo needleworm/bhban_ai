@@ -12,12 +12,15 @@ class DataReader():
     def __init__(self):
         self.label = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
 
-        self.train_X = []
-        self.train_Y = []
-        self.test_X = []
-        self.test_Y = []
+        self.train_X, self.train_Y, self.test_X, self.test_Y = self.read_data()
 
-        self.read_data()
+        # 데이터 읽기가 완료되었습니다.
+        # 읽어온 데이터의 정보를 출력합니다.
+        print("\n\nData Read Done!")
+        print("Training X Size : " + str(self.train_X.shape))
+        print("Training Y Size : " + str(self.train_Y.shape))
+        print("Test X Size : " + str(self.test_X.shape))
+        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
 
     def read_data(self):
         print("Reading Data...")
@@ -36,29 +39,24 @@ class DataReader():
 
         random.shuffle(data)
 
-        for i, el in enumerate(data):
-            if i < 0.8*len(data):
-                self.train_X.append(el[0])
-                self.train_Y.append(el[1])
-            else:
-                self.test_X.append(el[0])
-                self.test_Y.append(el[1])
+        X = []
+        Y = []
 
-        max_values = np.array((7.9, 4.4, 6.9, 2.5))
+        for el in data:
+            X.append(el[0])
+            Y.append(el[1])
 
-        self.train_X = np.asarray(self.train_X) / max_values
-        self.train_Y = np.asarray(self.train_Y)
-        self.test_X = np.asarray(self.test_X) / max_values
-        self.test_Y = np.asarray(self.test_Y)
+        X = np.asarray(X)
+        Y = np.asarray(Y)
 
-        # 데이터 읽기가 완료되었습니다.
-        # 읽어온 데이터의 정보를 출력합니다.
-        print("\n\nData Read Done!")
-        print("Training X Size : " + str(self.train_X.shape))
-        print("Training Y Size : " + str(self.train_Y.shape))
-        print("Test X Size : " + str(self.test_X.shape))
-        print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
+        X = X / np.max(X, axis=0)
 
+        train_X = X[:int(len(X)*0.8)]
+        train_Y = Y[:int(len(Y)*0.8)]
+        test_X = X[int(len(X)*0.8):]
+        test_Y = Y[int(len(Y)*0.8):]
+
+        return train_X, train_Y, test_X, test_Y
 
 
 def draw_graph(history):
