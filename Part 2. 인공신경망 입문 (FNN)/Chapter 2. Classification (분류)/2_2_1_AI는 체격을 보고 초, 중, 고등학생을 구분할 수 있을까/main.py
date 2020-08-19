@@ -4,14 +4,8 @@ Date : 2020.07.24.
 """
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import tensorflow as tf
 from tensorflow import keras
 import data_reader
-import time
-
-# 시작 시간을 기록합니다.
-start = time.time()
-print("Process Start...\n\n")
 
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 20  # 예제 기본값은 20입니다.
@@ -37,8 +31,3 @@ history = graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS, validation_data=(dr.t
 
 # 학습 결과를 그래프로 출력합니다.
 data_reader.draw_graph(history)
-
-# 코드 종료 시간을 계산하여 총 몇초가 소요되었는지 출력합니다.
-duration = time.time() - start
-print("\n\nProcess Done!")
-print("Total ", duration, " seconds spent.")
