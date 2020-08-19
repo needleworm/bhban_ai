@@ -12,7 +12,6 @@ EPOCHS = 20  # 예제 기본값은 20입니다.
 dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
-# 총 3층짜리 신경망입니다.
 graph = keras.Sequential([
     keras.layers.Dense(3),
     keras.layers.Dense(128, activation="relu"),
