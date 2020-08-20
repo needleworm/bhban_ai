@@ -31,7 +31,7 @@ class DataReader():
 
       img = tf.image.resize(img, new_shape)
       img = img[tf.newaxis, :]
-      return img
+      return tf.constant(img)
 
 
 def tensor_to_image(tensor):
