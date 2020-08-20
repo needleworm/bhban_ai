@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader():
     def __init__(self):
-        self.normalize_factors = []
         self.train_X, self.train_Y, self.test_X, self.test_Y = self.read_data()
 
         # 데이터 읽기가 완료되었습니다.
@@ -42,9 +41,8 @@ class DataReader():
 
         random.shuffle(data)
         data = np.asarray(data)
-        self.normalize_factors = np.max(data, axis=0)
 
-        normalized_data = data / self.normalize_factors
+        normalized_data = data / np.max(data, axis=0)
 
         x, y = normalized_data.shape
 
