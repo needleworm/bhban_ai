@@ -2,7 +2,6 @@
 Author : Byunghyun Ban
 Date : 2020.07.24.
 """
-import tensorflow as tf
 from tensorflow import keras
 import data_reader
 
