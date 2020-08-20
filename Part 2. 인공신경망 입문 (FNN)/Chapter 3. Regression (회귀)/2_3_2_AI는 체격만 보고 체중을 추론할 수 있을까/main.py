@@ -12,7 +12,7 @@ EPOCHS = 50  # 예제 기본값은 50입니다.
 dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
-graph = keras.Sequential([
+model = keras.Sequential([
     keras.layers.Dense(7),
     keras.layers.Dense(256, activation="relu"),
     keras.layers.BatchNormalization(),
@@ -26,14 +26,14 @@ graph = keras.Sequential([
 ])
 
 # 인공신경망을 컴파일합니다.
-graph.compile(optimizer="adam", loss="mse", metrics=['mae'])
+model.compile(optimizer="adam", loss="mse", metrics=['mae'])
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
-history = graph.fit(dr.train_X, dr.train_Y, epochs=EPOCHS,
+history = model.fit(dr.train_X, dr.train_Y, epochs=EPOCHS,
                     validation_data=(dr.test_X, dr.test_Y),
                     callbacks=[early_stop])
 
 # 학습 결과를 그래프로 출력합니다.
-data_reader.draw_graph(graph(dr.test_X), dr.test_Y, history)
+data_reader.draw_graph(model(dr.test_X), dr.test_Y, history)
