@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
-class DataReader():
+class DataReader:
     def __init__(self):
         self.label_names = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.mnist = keras.datasets.mnist
