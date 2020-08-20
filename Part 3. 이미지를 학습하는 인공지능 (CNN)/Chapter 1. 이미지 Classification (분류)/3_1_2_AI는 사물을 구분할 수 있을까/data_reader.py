@@ -2,7 +2,6 @@
 Author : Byunghyun Ban
 Date : 2020.07.17.
 """
-import numpy as np
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from tensorflow import keras
@@ -10,7 +9,7 @@ from matplotlib import pyplot as plt
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
-class DataReader():
+class DataReader:
     def __init__(self):
         self.label_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
         self.cifar = keras.datasets.cifar10
