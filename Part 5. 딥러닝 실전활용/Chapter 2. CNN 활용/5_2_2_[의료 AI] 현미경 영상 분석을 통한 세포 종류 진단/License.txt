@@ -1,0 +1,6 @@
+Collection of textures in colorectal cancer histology
+(Free Usage with Citation)
+
+Kather JN, Weis CA, Bianconi F, Melchers SM, Schad LR, Gaiser T, Marx A, Zollner F: Multi-class texture analysis in colorectal cancer histology (2016), Scientific Reports (in press)
+
+https://zenodo.org/record/53169#.XyOcApDCbKD
