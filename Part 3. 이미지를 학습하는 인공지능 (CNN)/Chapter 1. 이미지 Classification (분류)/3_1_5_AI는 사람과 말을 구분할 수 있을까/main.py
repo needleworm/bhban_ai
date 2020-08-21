@@ -5,7 +5,6 @@ Date : 2020.07.24.
 from tensorflow import keras
 import data_reader
 
-
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 30  # 예제 기본값은 30입니다.
 
@@ -14,7 +13,7 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 graph = keras.Sequential([
-    keras.layers.Conv2D(16, (3, 3), activation="relu", input_shape=(150, 150, 3)),
+    keras.layers.Conv2D(16, (3, 3), activation="relu"),
     keras.layers.MaxPooling2D((2, 2)),
     keras.layers.Conv2D(32, (3, 3), activation='relu'),
     keras.layers.MaxPooling2D((2, 2)),
