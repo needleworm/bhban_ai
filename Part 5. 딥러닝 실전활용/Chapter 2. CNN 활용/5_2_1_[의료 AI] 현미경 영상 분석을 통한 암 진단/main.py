@@ -5,7 +5,6 @@ Date : 2020.07.24.
 from tensorflow import keras
 import data_reader
 
-
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 20  # 예제 기본값은 20입니다.
 
@@ -14,7 +13,7 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 graph = keras.Sequential([
-    keras.layers.Conv2D(16, (3, 3), activation="relu", input_shape=(150, 150, 3)),
+    keras.layers.Conv2D(16, (3, 3), activation="relu"),
     keras.layers.MaxPooling2D((2, 2)),
     keras.layers.Conv2D(32, (3, 3), activation='relu'),
     keras.layers.MaxPooling2D((2, 2)),
@@ -26,12 +25,12 @@ graph = keras.Sequential([
     keras.layers.MaxPooling2D((2, 2)),
     keras.layers.Flatten(),
     keras.layers.Dense(512, activation='relu'),
-    keras.layers.Dense(8, activation="softmax")
+    keras.layers.Dense(1)
 ])
 
 # 인공신경망을 컴파일합니다.
 graph.compile(optimizer='adam', metrics=['accuracy'],
-              loss='sparse_categorical_crossentropy')
+              loss='binary_crossentropy')
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
