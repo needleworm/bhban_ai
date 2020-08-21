@@ -5,7 +5,6 @@ Date : 2020.07.24.
 from tensorflow import keras
 import data_reader
 
-
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 20  # 예제 기본값은 20입니다.
 
