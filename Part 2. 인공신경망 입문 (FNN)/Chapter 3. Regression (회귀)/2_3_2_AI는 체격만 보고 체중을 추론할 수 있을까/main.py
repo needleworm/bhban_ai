@@ -15,13 +15,9 @@ dr = data_reader.DataReader()
 model = keras.Sequential([
     keras.layers.Dense(7),
     keras.layers.Dense(256, activation="relu"),
-    keras.layers.BatchNormalization(),
     keras.layers.Dense(256, activation="relu"),
-    keras.layers.BatchNormalization(),
     keras.layers.Dense(256, activation="relu"),
-    keras.layers.BatchNormalization(),
     keras.layers.Dense(256, activation="relu"),
-    keras.layers.BatchNormalization(),
     keras.layers.Dense(1, activation='sigmoid')
 ])
 
