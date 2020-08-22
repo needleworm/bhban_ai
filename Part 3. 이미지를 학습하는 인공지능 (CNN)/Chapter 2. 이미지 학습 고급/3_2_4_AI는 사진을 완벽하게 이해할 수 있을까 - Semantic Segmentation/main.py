@@ -1,8 +1,6 @@
 """
 Author : Byunghyun Ban
 Date : 2020.07.24.
-This code uses sample codes from Tensorflow.org,
-which has Apache 2.0 License.
 """
 from tensorflow import keras
 import data_reader
