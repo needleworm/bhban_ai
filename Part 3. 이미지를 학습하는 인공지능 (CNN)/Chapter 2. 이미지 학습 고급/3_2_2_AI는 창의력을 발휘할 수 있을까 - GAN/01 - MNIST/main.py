@@ -1,8 +1,6 @@
 """
 Author : Byunghyun Ban
 Date : 2020.07.24.
-This code uses DCGAN sample codes from Tensorflow.org
-which has Apache 2.0 License.
 """
 import data_reader
 import gan
@@ -11,8 +9,7 @@ import gan
 EPOCHS = 100  # 예제 기본값은 100입니다.
 
 # 데이터를 읽어옵니다.
-dr = data_reader.DataReader("mnist")
-#dr = data_reader.DataReader("fashion_mnist")
+dr = data_reader.DataReader()
 
 # GAN을 불러옵니다.
 # Generator

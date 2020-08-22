@@ -16,19 +16,10 @@ import numpy as np
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader():
-    def __init__(self, dataset):
-        if dataset == "mnist":
-            (self.train_X, _), (_, _) = keras.datasets.mnist.load_data()
-            self.train_X = self.preprocess(self.train_X)
-            self.train_dataset = tf.data.Dataset.from_tensor_slices(self.train_X).shuffle(60000).batch(256)
-        elif dataset == "fashion_mnist":
-            (self.train_X, _), (_, _) = keras.datasets.fashion_mnist.load_data()
-            self.train_X = self.preprocess(self.train_X)
-            self.train_dataset = tf.data.Dataset.from_tensor_slices(self.train_X).shuffle(50000).batch(256)
-        else:
-            print("Only mnist and fashion_mnist supported")
-            exit(1)
-
+    def __init__(self):
+        (self.train_X, _), (_, _) = keras.datasets.mnist.load_data()
+        self.train_X = self.preprocess(self.train_X)
+        self.train_dataset = tf.data.Dataset.from_tensor_slices(self.train_X).shuffle(60000).batch(256)
 
     def preprocess(self, images):
         images = images.reshape(images.shape[0], 28, 28, 1).astype('float32')

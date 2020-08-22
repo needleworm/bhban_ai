@@ -1,15 +1,12 @@
 """
 Author : Byunghyun Ban
 Date : 2020.07.24.
-This code uses DCGAN sample codes from Tensorflow.org
-which has Apache 2.0 License.
 """
 import data_reader
 import gan
 
-
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
-EPOCHS = 1000  # 예제 기본값은 200입니다.
+EPOCHS = 200  # 예제 기본값은 200입니다.
 
 # 데이터를 읽어옵니다.
 dr = data_reader.DataReader()
