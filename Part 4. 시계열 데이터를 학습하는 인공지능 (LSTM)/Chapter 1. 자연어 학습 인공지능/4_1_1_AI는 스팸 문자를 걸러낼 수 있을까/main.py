@@ -2,8 +2,8 @@
 Author : Byunghyun Ban
 Date : 2020.07.24.
 """
-import data_reader
 from tensorflow import keras
+import data_reader
 
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 50  # 예제 기본값은 50입니다.
@@ -21,8 +21,8 @@ model = keras.Sequential([
 ])
 
 # 인공신경망을 컴파일합니다.
-model.compile(optimizer="adam", metrics=['accuracy']
-              , loss="binary_crossentropy")
+model.compile(optimizer="adam", metrics=['accuracy'],
+              loss="binary_crossentropy")
 
 # 인공신경망을 학습시킵니다.
 print("\n\n************ TRAINING START ************ ")
