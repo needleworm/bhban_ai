@@ -15,7 +15,7 @@ dr = data_reader.DataReader(14)
 model = keras.Sequential([
     keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True)),
     keras.layers.Dense(64, activation="relu"),
-    keras.layers.Dense(5),
+    keras.layers.Dense(5)
 ])
 
 # 인공신경망을 컴파일합니다.
