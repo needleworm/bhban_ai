@@ -3,8 +3,6 @@ Author : Byunghyun Ban
 Date : 2020.07.17.
 """
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
 

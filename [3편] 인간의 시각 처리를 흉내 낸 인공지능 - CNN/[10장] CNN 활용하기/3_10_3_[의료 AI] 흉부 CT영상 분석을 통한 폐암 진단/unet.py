@@ -4,9 +4,7 @@ Date : 2020.07.24.
 This code uses sample codes from https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277,
 which has Apache 2.0 License.
 """
-import tensorflow as tf
 from tensorflow import keras
-import numpy as np
 
 
 # 인공신경망을 제작합니다.
