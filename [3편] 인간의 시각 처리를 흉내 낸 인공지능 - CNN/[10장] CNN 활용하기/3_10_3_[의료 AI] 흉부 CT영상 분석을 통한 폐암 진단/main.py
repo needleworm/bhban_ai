@@ -6,7 +6,6 @@ from tensorflow import keras
 import data_reader
 import unet
 
-
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 50  # 예제 기본값은 50입니다.
 

@@ -2,8 +2,8 @@
 Author : Byunghyun Ban
 Date : 2020.07.24.
 """
-import data_reader
 from tensorflow import keras
+import data_reader
 
 # 몇 에포크 만큼 학습을 시킬 것인지 결정합니다.
 EPOCHS = 100  # 예제 기본값은 100입니다.
