@@ -19,9 +19,8 @@ model = keras.Sequential([
 ])
 
 # 인공신경망을 컴파일합니다.
-model.compile(optimizer="adam",
-              loss="sparse_categorical_crossentropy",
-              metrics=["accuracy"])
+model.compile(optimizer="adam", metrics=["accuracy"],
+              loss="sparse_categorical_crossentropy")
 
 # 인공신경망을 학습시킵니다.
 print("************ TRAINING START ************")
