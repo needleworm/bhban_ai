@@ -1,3 +1,0 @@
-Weather time series dataset
-Recorded by the Max Plank Institute for Biogeochemistry.
-https://www.bgc-jena.mpg.de/wetter/
