@@ -1,1 +1,0 @@
-The dataset is CIFAR-10 Dataset collected by Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton. https://www.cs.toronto.edu/~kriz/cifar.html
