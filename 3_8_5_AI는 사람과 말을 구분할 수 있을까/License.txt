@@ -1,0 +1,4 @@
+Introducing Horses or Humans – a Dataset for learning Computer Vision
+It has Creative Commons CC BY 2.0 Licence. Free use with declareation of the producer.
+http://www.laurencemoroney.com/horses-or-humans-dataset/
+Laurence Moroney (lmoroney@gmail.com / laurencemoroney.com)
