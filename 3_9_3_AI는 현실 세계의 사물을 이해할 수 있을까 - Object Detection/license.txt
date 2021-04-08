@@ -1,0 +1,2 @@
+The App is from Tensorflow Example Models in Apache 2.0 Licence.
+Redmon, Joseph, et al. "You only look once: Unified, real-time object detection." Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.
