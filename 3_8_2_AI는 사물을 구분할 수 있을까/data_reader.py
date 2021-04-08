@@ -2,22 +2,21 @@
 Author : Byunghyun Ban
 Date : 2020.07.17.
 """
-import numpy as np
-from tensorflow import keras
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+from tensorflow import keras
 from matplotlib import pyplot as plt
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
 class DataReader:
     def __init__(self):
-        self.label_names = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        self.mnist = keras.datasets.mnist
-        (train_X, self.train_Y), (test_X, self.test_Y) = self.mnist.load_data()
+        self.label_names = ["airplane", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+        self.cifar = keras.datasets.cifar10
+        (self.origin_train_X, self.train_Y), (self.origin_test_X, self.test_Y) = self.cifar.load_data()
 
-        self.train_X = np.asarray(train_X) / 255.0
-        self.test_X = np.asarray(test_X) / 255.0
+        self.train_X = self.preprocess(self.origin_train_X)
+        self.test_X = self.preprocess(self.origin_test_X)
 
         # 데이터 읽기가 완료되었습니다.
         # 읽어온 데이터의 정보를 출력합니다.
@@ -27,15 +26,34 @@ class DataReader:
         print("Test X Size : " + str(self.test_X.shape))
         print("Test Y Size : " + str(self.test_Y.shape) + '\n\n')
 
-    def show_images(self):
+
+    def preprocess(self, images):
+        images = images / 255.0
+        r = images[:, :, :, 0]
+        g = images[:, :, :, 1]
+        b = images[:, :, :, 2]
+        return (r + g + b) / 3.0
+
+    def show_raw_images(self):
         plt.figure(figsize=(10, 10))
         for i in range(25):
             plt.subplot(5, 5, i+1)
             plt.xticks([])
             plt.yticks([])
             plt.grid(False)
+            plt.imshow(self.origin_train_X[i], cmap=plt.cm.binary)
+            plt.xlabel(self.label_names[int(self.train_Y[i])])
+        plt.show()
+
+    def show_processed_images(self):
+        plt.figure(figsize=(10, 10))
+        for i in range(25):
+            plt.subplot(5, 5, i + 1)
+            plt.xticks([])
+            plt.yticks([])
+            plt.grid(False)
             plt.imshow(self.train_X[i], cmap=plt.cm.binary)
-            plt.xlabel(self.label_names[self.train_Y[i]])
+            plt.xlabel(self.label_names[int(self.train_Y[i])])
         plt.show()
 
 
