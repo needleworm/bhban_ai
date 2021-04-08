@@ -1,0 +1,3 @@
+Spam Text Message Classification Dataset by Team AI, with CC0 License.
+http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/
+Almeida, T.A., G?ez Hidalgo, J.M., Yamakami, A. Contributions to the study of SMS Spam Filtering: New Collection and Results. Proceedings of the 2011 ACM Symposium on Document Engineering (ACM DOCENG'11), Mountain View, CA, USA, 2011
