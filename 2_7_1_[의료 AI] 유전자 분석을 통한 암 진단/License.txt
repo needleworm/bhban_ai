@@ -1,0 +1,3 @@
+Grossman, Robert L., Heath, Allison P., Ferretti, Vincent, Varmus, Harold E., Lowy, Douglas R., Kibbe, Warren A., Staudt, Louis M. (2016) Toward a Shared Vision for Cancer Genomic Data. New England Journal of Medicine375:12, 1109-1112
+
+Projects: TGCA_BRCA, TCGA_COAD, TCGA_LUAD, TCGA_THCA
