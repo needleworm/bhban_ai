@@ -13,8 +13,20 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 model = keras.Sequential([
-    keras.layers.Flatten(input_shape=(32, 32)),
+    keras.layers.Conv2D(32, (3, 3)),
+    keras.layers.BatchNormalization(),
+    keras.layers.ReLU(),
+    keras.layers.MaxPooling2D((2, 2)),
+    keras.layers.Conv2D(64, (3, 3)),
+    keras.layers.BatchNormalization(),
+    keras.layers.ReLU(),
+    keras.layers.MaxPooling2D((2, 2)),
+    keras.layers.Conv2D(64, (3, 3)),
+    keras.layers.BatchNormalization(),
+    keras.layers.ReLU(),
+    keras.layers.Flatten(),
     keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dropout(rate=0.5),
     keras.layers.Dense(10, activation='softmax')
 ])
 
