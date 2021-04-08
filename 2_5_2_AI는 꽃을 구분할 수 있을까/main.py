@@ -13,8 +13,9 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 model = keras.Sequential([
-    keras.layers.Dense(3),
+    keras.layers.Dense(4),
     keras.layers.Dense(128, activation="relu"),
+    keras.layers.Dropout(rate=0.5),
     keras.layers.Dense(3, activation='softmax')
 ])
 
@@ -23,9 +24,9 @@ model.compile(optimizer="adam", metrics=["accuracy"],
               loss="sparse_categorical_crossentropy")
 
 # 인공신경망을 학습시킵니다.
-print("************ TRAINING START ************")
+print("\n\n************ TRAINING START ************ ")
 early_stop = keras.callbacks.EarlyStopping(monitor='val_loss', patience=10)
-history = model.fit(dr.train_X, dr.train_Y, epochs=EPOCHS,
+history = model.fit(dr.train_X, dr.train_Y, epochs=EPOCHS, batch_size=5,
                     validation_data=(dr.test_X, dr.test_Y),
                     callbacks=[early_stop])
 
