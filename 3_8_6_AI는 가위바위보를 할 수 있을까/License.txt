@@ -1,0 +1,4 @@
+Introducing Rock Paper Scissors – A multi class learning dataset
+It has Creative Commons CC BY 2.0 Licence. Free use with declareation of the producer.
+http://www.laurencemoroney.com/rock-paper-scissors-dataset/
+Laurence Moroney (lmoroney@gmail.com / laurencemoroney.com)
