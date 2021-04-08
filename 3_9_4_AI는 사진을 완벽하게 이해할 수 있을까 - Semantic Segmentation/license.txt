@@ -1,0 +1,8 @@
+The dataset is distributed as Creative Commons Attribution-ShareAlike 4.0 International Licence.
+
+https://www.robots.ox.ac.uk/~vgg/data/pets/
+O. M. Parkhi, A. Vedaldi, A. Zisserman, C. V. Jawahar
+IEEE Conference on Computer Vision and Pattern Recognition, 2012
+
+
+Some contents of the sample codes are modified version of example codes from https://www.kaggle.com/keegil/keras-u-net-starter-lb-0-277 in Apache 2.0 Licence.
