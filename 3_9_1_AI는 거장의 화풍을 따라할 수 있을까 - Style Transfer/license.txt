@@ -1,0 +1,4 @@
+Pixabay로부터 입수된 CMMELLOW님의 이미지입니다. (상업적 용도 사용 가능, 출처 안 밝혀도 됨)
+
+The code uses Google MobileNet model with Tensorflow Hub, with Apache 2.0 Licence.
+Gatys, Leon A., Alexander S. Ecker, and Matthias Bethge. "A neural algorithm of artistic style." arXiv preprint arXiv:1508.06576 (2015).
