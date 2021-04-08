@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>수학, 통계를 몰라도 이해할 수 있는 쉬운 딥러닝</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="비전공자도 볼 수 있는 최초의 딥러닝 입문서">
+    <link rel="canonical" href="https://needleworm.github.io//bhban_ai/">
+
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+      gtag('event', 'conversion', {'send_to': 'AW-869459612/_ieBCLym-_QBEJzNy54D'});
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GP6DD3D3FC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GP6DD3D3FC');
+</script>
+    
+     <!-- 미리보기 카드 -->
+    <!-- 트위터 -->
+    <meta name="twitter:card" content="업무자동화">
+    <meta name="twitter:title" content="6개월 치 업무를 하루 만에 끝내는 업무자동화">
+    <meta name="twitter:description" content="6개월 치 업무를 하루 만에 끝내는 업무자동화">
+    <meta name="twitter:image" content="/bhban_ai/img/preview.jpg" />
+
+    <!-- 일반 -->
+    <meta property="og:type" content="article">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="6개월 치 업무를 하루 만에 끝내는 업무자동화">
+    <meta property="og:description" content="6개월 치 업무를 하루 만에 끝내는 업무자동화">
+    <meta property="og:image" content="/bhban_ai/img/preview.jpg" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/bhban_ai/img/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/bhban_ai/img/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/bhban_ai/img/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/bhban_ai/img/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/bhban_ai/img/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/bhban_ai/img/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/bhban_ai/img/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/bhban_ai/img/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/bhban_ai/img/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/bhban_ai/img/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/bhban_ai/img/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/bhban_ai/img/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/bhban_ai/img/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/bhban_ai/img/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/bhban_ai/img/favicon.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/bhban_ai/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+    <body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="img/logo.png" alt="" style="height:100%;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#book">책소개</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#part1">제1편</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#part2">제2편</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#part3">제3편</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#part4">제4편</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">문의</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#otherBooks">작가의 다른 책들</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container" style="height:55vw; min-height:500px;">
+            
+        </div>
+    </header>
+<!--
+        
+          
+        
+          
+        
+          
+        
+          
+        
+ -->
+
+
+    <!-- markets -->
+<section  id="book" class="bg-light-gray">
+    <div class="container" style="text-align:center;">
+      <h3>
+        책소개
+      </h3>
+        <div class="team-member">
+            <img src="img/mainCover.jpg" class="img-responsive bookcover" alt="">
+            <h5>수학, 통계를 몰라도 이해할 수 있는 쉬운 딥러닝</h5>
+            <h6>비전공자도 볼 수 있는 최초의 딥러닝 입문서</h6>
+            <ul class="list-inline ">
+                <li>
+                    <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17665326" target="_blank" rel="noreferrer">
+                        <img src="img/stores/naver.png" class="bookstore"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17665326" target="_blank" rel="noreferrer">
+                        <img src="img/stores/aladdin.png" class="bookstore"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17665326" target="_blank" rel="noreferrer">
+                        <img src="img/stores/yes24.png" class="bookstore"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17665326" target="_blank" rel="noreferrer">
+                        <img src="img/stores/kyobo.png" class="bookstore"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <a href="https://github.com/needleworm/bhban_ai/archive/master.zip" class="page-scroll btn btn-xl">
+                <img src="img/mainBanner.png" alt="" style="height:30px;">
+            </a>
+      </div>
+    </div>
+  </section>
+
+    <!-- markets -->
+<section  id="part1" >
+    <div class="container" style="text-align:center;">
+      <h3>
+        제1편 <i class="fab fa-python"></i> 파이썬 준비하기
+      </h3>
+        <div>
+            <h4 class="chapterTitle">1장 <i class="fab fa-python"></i> 파이썬 개발환경 구축하기</h4>
+            <ul class="chapterContent">
+                <li>
+                    <i class="fab fa-python"></i> 파이썬이란?
+                </li>
+                <li>
+                    아나콘다 설치하기 <a href="https://www.anaconda.com/products/individual#Downloads"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                <li>
+                    파이참<a href="https://www.jetbrains.com/ko-kr/pycharm/download/#section=windows"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>과 Git<a href="https://gitforwindows.org/"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a> 설치하기
+                </li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">2장 딥러닝을 위한 <i class="fab fa-python"></i> 파이썬 기초학습</h4>
+            <ul class="chapterContent">
+                <li>사칙연산</li>
+                <li>변수</li>
+                <li>자료형</li>
+                <li>함수</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">3장 딥러닝을 위한 환경 구축하기</h4>
+            <ul class="chapterContent">
+                <li>
+                    GPU 활용을 위한 환경 구축하기 <a href="https://www.nvidia.co.kr/Download/index.aspx?lang=kr"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a><a href="https://developer.nvidia.com/downloads"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </li>
+                <li>
+                    딥러닝 라이브러리<a href="https://www.tensorflow.org/"  target="_blank" rel="noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>와 예제 코드<a href="https://github.com/needleworm/bhban_ai"  target="_blank" rel="noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a> 설치하기
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- markets -->
+<section  id="part2" class="bg-light-gray">
+    <div class="container" style="text-align:center;">
+      <h3>
+        제2편 인간의 뇌세포를 흉내 낸 인공지능 - FNN
+      </h3>
+        <h4 ><a href="https://github.com/needleworm/bhban_ai/archive/part2.zip">2편 예제코드 다운로드 
+            <i class="fas fa-external-link-alt"></i>
+        </a></h4>
+        <div>
+            <h4 class="chapterTitle">4장 인공신경망과 딥러닝</h4>
+            <ul class="chapterContent">
+                <li>통계와 머신러닝</li>
+                <li>뇌세포를 모방한 기계, 퍼셉트론</li>
+                <li>인공신경망과 딥러닝</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">5장 분류(Classification) 기법 활용하기</h4>
+            <ul class="chapterContent">
+                <li>AI는 체격을 보고 초·중·고등학생을 구분할 수 있을까?</li>
+                <li>AI는 꽃을 구분할 수 있을까?</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">6장 회귀(Regression) 기법 활용하기</h4>
+            <ul class="chapterContent">
+                <li>분류와 회귀의 차이는 무엇일까?</li>
+                <li>AI는 체격만 보고 체중을 추론할 수 있을까?</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">7장 FNN 활용하기</h4>
+            <ul class="chapterContent">
+                <li>[의료 AI] 유전자 분석을 통한 암 진단</li>
+                <li>[의료 AI] BMI(비만도) 분석을 통한 키, 체중 추론 AI</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- markets -->
+<section  id="part3" >
+    <div class="container" style="text-align:center;">
+      <h3>
+        제3편 인간의 뇌세포를 흉내 낸 인공지능 - FNN
+      </h3>
+        <h4 ><a href="https://github.com/needleworm/bhban_ai/archive/part3.zip" >3편 예제코드 다운로드 
+            <i class="fas fa-external-link-alt"></i>
+        </a></h4>
+        <div>
+            <h4 class="chapterTitle">8장 이미지 분류(Classification) 기법 활용하기</h4>
+            <ul class="chapterContent">
+                <li>AI는 손글씨를 인식할 수 있을까?</li>
+                <li>AI는 사물을 구분할 수 있을까?</li>
+                <li>시각적 정보 학습의 달인, CNN을 소개합니다!</li>
+                <li>CNN AI는 사물을 구분할 수 있을까?</li>
+                <li>AI는 사람과 말을 구분할 수 있을까?</li>
+                <li>AI는 가위바위보를 할 수 있을까?</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">9장 이미지 학습 기법 활용하기</h4>
+            <ul class="chapterContent">
+                <li>AI는 거장의 화풍을 따라할 수 있을까? - Style Transfer</li>
+                <li>AI는 창의력을 발휘할 수 있을까? - GAN</li>
+                <li>AI는 현실 세계의 사물을 이해할 수 있을까? -Object Detection</li>
+                <li>AI는 사진을 완벽하게 이해할 수 있을까?</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">10장 CNN 활용하기</h4>
+            <ul class="chapterContent">
+                <li>[의료 AI] 현미경 영상 분석을 통한 암 진단</li>
+                <li>[의료 AI] 현미경 영상 분석을 통한 세포 종류 진단</li>
+                <li>[의료 AI] 흉부 CT 영상 분석을 통한 폐암 진단</li>
+            </ul>
+      </div>
+    </div>
+  </section>
+
+    <!-- markets -->
+<section  id="part4" class="bg-light-gray">
+    <div class="container" style="text-align:center;">
+      <h3>
+        제3편 인간의 기억력을 흉내 낸 인공지능 - LSTM
+      </h3>
+        <h4><a href="https://github.com/needleworm/bhban_ai/archive/part4.zip" >4편 예제코드 다운로드 
+            <i class="fas fa-external-link-alt"></i>
+        </a></h4>
+        <div>
+            <h4 class="chapterTitle">11장 자연어 학습 인공지능</h4>
+            <ul class="chapterContent">
+                <li>AI는 스팸 문자를 걸러낼 수 있을까?</li>
+                <li>장기 기억과 단기 기억, LSTM</li>
+                <li>LSTM AI는 얼마나 성능이 뛰어날까?</li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <h4 class="chapterTitle">12장 LSTM 활용하기</h4>
+            <ul class="chapterContent">
+                <li>[기상 AI] LSTM을 활용한 일기예보</li>
+                <li>[금융 AI] LSTM을 활용한 주가예측</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="my-form" action="https://formspree.io/f/mgepqzla" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name *" id="full-name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group form-group">
+                                    <input type="email" name="_replyto" class="form-control" placeholder="Your Email *" id="email-address" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group form-group">
+                                    <input type="telephone" name="telephone" class="form-control" placeholder="Your Phone *" id="telephone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group form-group">
+                                    <textarea type="text" name="message" class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" id="my-form-submit-button" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                        <p id="my-form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Books Section -->
+    <section id="otherBooks" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">작가의 다른 책들</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/1.jpg" class="img-responsive bookcover" alt="">
+                        <h5>6개월 치 업무를 하루 만에 끝내는 업무자동화</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17665326" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8970504745&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/96360166" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970504742" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/7.jpg" class="img-responsive bookcover" alt="">
+                        <h5>코딩하는 공익</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=16340073" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8955866119&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/90081924" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788955866117" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/3.jpg" class="img-responsive bookcover" alt="">
+                        <h5>공학자의 지혜묵상</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=16369629" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K452639642&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/90392271" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000378984" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/2.jpg" class="img-responsive bookcover" alt="">
+                        <h5>공학자의 오경묵상</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=17469780" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K112735243&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/95590656" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000403693" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/6.jpg" class="img-responsive bookcover" alt="">
+                        <h5>실전 민사소송법</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=16357665" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K572639625&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/90250538" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000377208" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/5.jpg" class="img-responsive bookcover" alt="">
+                        <h5>법대로 합시다</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=10236421" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/30660689" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://digital.kyobobook.co.kr/digital/ebook/ebookDetail.ink?LINK=NVE&category=001&barcode=4801159610081" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="img/books/4.jpg" class="img-responsive bookcover" alt="">
+                        <h5>나는 아직 잊힐 준비가 되지 않았어요</h5 >
+                        <ul class="list-inline ">
+                            
+                            <li>
+                                <a href="https://book.naver.com/bookdb/book_detail.nhn?bid=16629718" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/naver.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K622632023&start=pnaver_02" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/aladdin.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://www.yes24.com/Product/Goods/92154589" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/yes24.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000388044" target="_blank" rel="noreferrer">
+                                    <img src="img/stores/kyobo.png" class="bookstore"/>
+                                </a>
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2021 <a href="https://needleworm.github.io" target="_blank" rel="noreferrer">
+                        반병현
+                    </a> All Rights Reserved.</span>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <a href="https://www.booksr.co.kr/" target="_blank" rel="noreferrer">
+                        생능출판사
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/bhban_ai/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bhban_ai/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/bhban_ai/js/jquery.easing.min.js"></script>
+    <script src="/bhban_ai/js/classie.js"></script>
+    <script src="/bhban_ai/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/bhban_ai/js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/bhban_ai/js/agency.js"></script>
+
+
+    </body>
+</html>
