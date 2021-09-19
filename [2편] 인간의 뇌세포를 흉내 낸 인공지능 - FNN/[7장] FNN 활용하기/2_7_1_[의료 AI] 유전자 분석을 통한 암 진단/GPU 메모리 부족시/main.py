@@ -13,7 +13,7 @@ dr = data_reader.DataReader()
 
 # 인공신경망을 제작합니다.
 model = keras.Sequential([
-    keras.layers.Dense(2000),
+    keras.layers.Dense(1000),
     keras.layers.Dense(256, activation="relu"),
     keras.layers.Dropout(rate=0.5),
     keras.layers.Dense(128, activation="relu"),
