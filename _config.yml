@@ -8,7 +8,18 @@ description: 비전공자도 볼 수 있는 최초의 딥러닝 입문서
 
 
 books:
-
+- title: CheeseCake Vol 01. 봄 여름 가을 겨울 그리고 봄
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/11.jpeg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.naver?bid=21295784
+    - shop: aladdin
+      url: http://aladin.kr/p/l4o7A
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/105138391
+    - shop: kyobo
+      url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000474846
+      
 - title: 101가지 컴퓨터 활용팁
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/10.jpg
   stores:
