@@ -26,7 +26,7 @@ class DataReader():
     def read_data(self):
         # 파일을 실행합니다.
         filename = os.listdir("data")[0]
-        file = open("data/" + filename)
+        file = open("data/" + filename, encoding="utf8")
 
         # 헤더를 제거합니다.
         file.readline()
