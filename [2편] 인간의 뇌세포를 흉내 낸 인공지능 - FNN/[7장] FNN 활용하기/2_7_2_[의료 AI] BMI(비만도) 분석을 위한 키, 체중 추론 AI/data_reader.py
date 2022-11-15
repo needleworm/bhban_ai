@@ -4,9 +4,29 @@ Date : 2020.07.17.
 """
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import numpy as np
 import random
-import matplotlib.pyplot as plt
+import time
+try:
+    from matplotlib import pyplot as plt
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'matplotlib'])
+    try:
+        from matplotlib import pyplot as plt
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from matplotlib import pyplot as plt
+
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'numpy'])
+    try:
+        import numpy as np
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import numpy as np
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.

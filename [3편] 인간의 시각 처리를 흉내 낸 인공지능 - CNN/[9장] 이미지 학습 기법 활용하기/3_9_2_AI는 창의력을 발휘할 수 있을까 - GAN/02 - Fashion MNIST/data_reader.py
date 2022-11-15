@@ -4,14 +4,57 @@ Date : 2020.07.17.
 This code uses DCGAN sample codes from Tensorflow.org
 which has Apache 2.0 License.
 """
-# pip install -q imageio
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-from matplotlib import pyplot as plt
 from tensorflow import keras
 import tensorflow as tf
-from PIL import Image
-import numpy as np
+import time
+
+try:
+    import imageio
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'imageio'])
+    try:
+        import imageio
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import imageio
+
+try:
+    from matplotlib import pyplot as plt
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'matplotlib'])
+    try:
+        from matplotlib import pyplot as plt
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from matplotlib import pyplot as plt
+
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'numpy'])
+    try:
+        import numpy as np
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import numpy as np
+
+try:
+    from PIL import Image
+
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'pillow'])
+    try:
+        from PIL import Image
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from PIL import Image
+
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.

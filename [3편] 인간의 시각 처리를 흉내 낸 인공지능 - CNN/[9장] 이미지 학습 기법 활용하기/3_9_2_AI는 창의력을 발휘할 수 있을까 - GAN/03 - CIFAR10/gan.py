@@ -8,11 +8,40 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from tensorflow import keras
-import imageio
 import glob
-from IPython import display
-from matplotlib import pyplot as plt
 import time
+
+try:
+    import imageio
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'imageio'])
+    try:
+        import imageio
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import imageio
+try:
+    from matplotlib import pyplot as plt
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'matplotlib'])
+    try:
+        from matplotlib import pyplot as plt
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from matplotlib import pyplot as plt
+
+try:
+    from IPython import display
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'ipython'])
+    try:
+        from IPython import display
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from IPython import display
 
 
 # 인공신경망을 제작합니다.
