@@ -2,8 +2,9 @@
 Author : Byunghyun Ban
 Date : 2020.07.24.
 """
-import tensorflow_hub as hub
 import data_reader
+import tensorflow_hub as hub
+
 
 # 데이터를 불러옵니다.
 dr = data_reader.DataReader("content.jpg", "style.jpg")

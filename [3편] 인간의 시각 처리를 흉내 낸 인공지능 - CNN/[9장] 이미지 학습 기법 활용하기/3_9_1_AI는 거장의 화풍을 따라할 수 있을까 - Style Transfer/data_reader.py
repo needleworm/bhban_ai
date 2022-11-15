@@ -34,7 +34,6 @@ except ModuleNotFoundError:
 
 try:
     from PIL import Image
-
 except ModuleNotFoundError:
     import pip
     pip.main(['install', 'pillow'])
@@ -43,6 +42,17 @@ except ModuleNotFoundError:
     except ModuleNotFoundError:
         time.sleep(2)
         from PIL import Image
+
+try:
+    import tensorflow_hub as hub
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'tensorflow_hub'])
+    try:
+        import tensorflow_hub as hub
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import tensorflow_hub as hub
 
 
 # 데이터를 떠먹여 줄 클래스를 제작합니다.
