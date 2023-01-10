@@ -1,7 +1,5 @@
 {
-
-  "short_name": "쉬운 딥러닝",
-  "name": "수학, 통계를 몰라도 이해되는 쉬운 딥러닝",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
