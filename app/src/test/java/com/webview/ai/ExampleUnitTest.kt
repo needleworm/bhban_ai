@@ -1,4 +1,4 @@
-package com.example.rpa
+package com.webview.ai
 
 import org.junit.Test
 

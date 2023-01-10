@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.rpa'
+    namespace 'com.webview.ai'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.rpa"
+        applicationId "com.webview.ai"
         minSdk 26
         targetSdk 32
         versionCode 1
