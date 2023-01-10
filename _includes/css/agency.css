@@ -343,8 +343,16 @@ header .intro-text .intro-heading {
     font-weight: 700;
     line-height: 50px;
 }
+.logo {
+    width:40vw;
+    padding-top:8px;
+}
+
 
 @media(min-width:768px) {
+    .logo {
+        height:100%;
+    }
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
