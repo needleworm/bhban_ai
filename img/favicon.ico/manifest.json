@@ -1,4 +1,7 @@
 {
+  "manifest_version": 2,
+ "display": "fullscreen",
+ "start_url": "/bhban_ai/?fullscreen=true",
  "name": "쉬운 딥러닝",
  "theme_color": "#000000",
  "background_color": "#ffffff",
@@ -22,7 +25,5 @@
    "type": "image/png",
    "density": "2.0"
   },
-  "start_url": "/?standalone=true",
-  "display": "standalone"
  ]
 }
